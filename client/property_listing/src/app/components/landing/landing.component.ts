@@ -15,6 +15,7 @@ import { Component } from '@angular/core';
             <img src="../../../assets/img/house-banner.png" alt="House Image">
         </div>
     </div>
+    <app-search></app-search>
 </section>
   `,
   styles: [
