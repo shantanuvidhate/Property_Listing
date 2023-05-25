@@ -11,6 +11,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { DropLocationComponent } from './components/search/drop-location/drop-location.component';
 import { DropStatusComponent } from './components/search/drop-status/drop-status.component';
 import { DropPriceComponent } from './components/search/drop-price/drop-price.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { DropPriceComponent } from './components/search/drop-price/drop-price.co
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
