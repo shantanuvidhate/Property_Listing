@@ -13,7 +13,7 @@ import { Component } from '@angular/core';
     <mat-icon class="dropdown-icon-secondary"> {{isExpanded ? 'expand_less' : 'keyboard_arrow_down'}} </mat-icon>
   </button>
     <mat-menu #menu="matMenu" class="cursor-pointer hover:text-white-700">
-      <button mat-menu-item *ngFor="let location of locations" (click)="selectLocation(location)">{{location}}</button>
+      <button (click)="toggleExpand()" mat-menu-item *ngFor="let location of locations" (click)="selectLocation(location)">{{location}}</button>
     </mat-menu>
   </Menu>
 

@@ -15,7 +15,7 @@
       @apply flex h-[64px] items-center px-[18px] border rounded-lg;
     }
     .dropdown-icon-primary {
-      @apply text-2xl mr-[18px] text-blue-800;
+      @apply text-xl mr-[18px] text-blue-800;
     }
     .dropdown-icon-secondary {
       @apply text-2xl text-blue-700 ml-auto;
