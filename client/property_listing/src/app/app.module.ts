@@ -12,6 +12,7 @@ import { DropLocationComponent } from './components/search/drop-location/drop-lo
 import { DropStatusComponent } from './components/search/drop-status/drop-status.component';
 import { DropPriceComponent } from './components/search/drop-price/drop-price.component';
 import {MatMenuModule} from '@angular/material/menu';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {MatMenuModule} from '@angular/material/menu';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
