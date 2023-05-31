@@ -13,7 +13,7 @@ import { Component } from '@angular/core';
     <mat-icon class="dropdown-icon-secondary"> {{isExpanded ? 'expand_less' : 'keyboard_arrow_down'}} </mat-icon>
   </button>
     <mat-menu #menu="matMenu" class="cursor-pointer hover:text-white-700">
-      <button (click)="toggleExpand()" mat-menu-item *ngFor="let priceRange of priceRanges" (click)="selectPriceRange(priceRange)">{{priceRange}}</button>
+      <button (click)="toggleExpand()" mat-menu-item *ngFor="let priceRange of priceRanges" (click)="selectPriceRange(priceRange.price)">{{priceRange.price}}</button>
     </mat-menu>
   </Menu>
   `,
@@ -23,7 +23,15 @@ import { Component } from '@angular/core';
 export class DropPriceComponent {
   
   isExpanded: boolean = false;
-  priceRanges :string[] = [];      
+  priceRanges :Array<{price : string}> = [
+    {price:'1000000 - 2000000'},
+    {price:'2000000 - 3000000'},
+    {price:'3000000 - 4000000'},
+    {price:'4000000 - 5000000'},
+    {price:'5000000 - 6000000'},
+    {price:'6000000 - 7000000'},
+    {price:'7000000 - 8000000'}           //-----> Later to be changed on API call in ngOninit
+  ];      
   selectedPriceRange : string | null= null;
 
   toggleExpand(): void {
