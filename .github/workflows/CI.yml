@@ -19,12 +19,6 @@ jobs:
         with:
           node-version: 14
 
-      - name: Install Angular dependencies
-        run: npm ci
-
-      - name: Build Angular project
-        run: npm run build --prod
-
       - name: Set up JDK
         uses: actions/setup-java@v2
         with:
