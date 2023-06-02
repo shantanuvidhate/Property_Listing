@@ -1,4 +1,4 @@
-name: CI pipeline for Build and Quality Checks
+name: CI pipeline for Code Quality
 
 on:
   push:
@@ -10,33 +10,31 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
-
     steps:
-    - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
 
-    - name: Build
-      run: |
-        npm install
-        grunt
+      - name: Install Angular dependencies
+        run: npm ci
 
-    - name: Set up JDK
-      uses: actions/setup-java@v2
-      with:
-        java-version: 11
+      - name: Build Angular project
+        run: npm run build --prod
 
-    - name: Build and test Spring project
-      run: mvn clean verify
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: 11
 
-    - name: Run code quality checks for Spring
-      run: mvn checkstyle:check
+      - name: Build and test Spring project
+        run: mvn clean verify
 
-    - name: Run code quality checks for Angular
-      run: npx ng lint
+      - name: Run code quality checks for Spring
+        run: mvn checkstyle:check
+
+      - name: Run code quality checks for Angular
+        run: npx ng lint
