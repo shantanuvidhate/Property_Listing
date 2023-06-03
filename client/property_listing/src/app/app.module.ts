@@ -13,7 +13,6 @@ import { DropStatusComponent } from './components/search/drop-status/drop-status
 import { DropPriceComponent } from './components/search/drop-price/drop-price.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { FormsModule } from '@angular/forms';
-import { HouseListComponent } from './pages/house-list/house-list.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,6 @@ import { HouseListComponent } from './pages/house-list/house-list.component';
     DropLocationComponent,
     DropStatusComponent,
     DropPriceComponent,
-    HouseListComponent
   ],
   imports: [
     BrowserModule,
