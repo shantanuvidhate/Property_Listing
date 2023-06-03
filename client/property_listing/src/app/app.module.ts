@@ -13,6 +13,8 @@ import { DropStatusComponent } from './components/search/drop-status/drop-status
 import { DropPriceComponent } from './components/search/drop-price/drop-price.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { FormsModule } from '@angular/forms';
+import { HouseListComponent } from './components/house-list/house-list.component';
+import { HouseComponent } from './components/house/house.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { FormsModule } from '@angular/forms';
     LandingComponent,
     DropLocationComponent,
     DropStatusComponent,
-    DropPriceComponent
+    DropPriceComponent,
+    HouseListComponent,
+    HouseComponent,
   ],
   imports: [
     BrowserModule,
