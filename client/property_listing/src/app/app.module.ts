@@ -15,6 +15,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import { FormsModule } from '@angular/forms';
 import { HouseListComponent } from './components/house-list/house-list.component';
 import { HouseComponent } from './components/house/house.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { HouseComponent } from './components/house/house.component';
     BrowserAnimationsModule,
     MatIconModule,
     MatMenuModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
