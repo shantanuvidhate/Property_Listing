@@ -12,6 +12,6 @@ export class PropertyListService {
   ) { }
 
   getPropertyList () {
-    this._httpClient.get(environment.PostProperty_API + 'propertypost')
+    return this._httpClient.get(environment.PostProperty_API + 'propertypost')
   }
 }
