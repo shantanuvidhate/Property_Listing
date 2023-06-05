@@ -1,20 +1,9 @@
 import { Component } from '@angular/core';
 import {OnInit} from '@angular/core'
 import { PropertyListService } from 'src/app/services/property-list.service';
+import { PropertyDetails } from '../utilities/propertyDetails';
 
-interface Property {
-  _id: number;
-  title: string;
-  price: number;
-  location: string;
-  country: string;
-  area: number;
-  bedrooms: number;
-  bathrooms: number;
-  status: string;
-  description: string;
-  image_url: string;
-}
+
 
 @Component({
   selector: 'app-house',
@@ -22,7 +11,7 @@ interface Property {
   styleUrls: ['./house.component.css']
 })
 export class HouseComponent implements OnInit {
-  propertyData : Property[] = [];
+  propertyData : Array<PropertyDetails> = [];
   constructor (
     private _propertyList : PropertyListService
   ) {}
