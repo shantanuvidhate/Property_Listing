@@ -15,6 +15,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import { FormsModule } from '@angular/forms';
 import { HouseListComponent } from './components/house-list/house-list.component';
 import { HouseComponent } from './components/house/house.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PropertyDetailsComponent } from './pages/property-details/property-details.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { HouseComponent } from './components/house/house.component';
     DropPriceComponent,
     HouseListComponent,
     HouseComponent,
+    PropertyDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,8 @@ import { HouseComponent } from './components/house/house.component';
     BrowserAnimationsModule,
     MatIconModule,
     MatMenuModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

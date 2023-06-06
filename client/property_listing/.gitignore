@@ -46,3 +46,7 @@ Thumbs.db
 
 #assets                 ------> check   
 /src/assets
+
+# environment variable
+
+src/environments

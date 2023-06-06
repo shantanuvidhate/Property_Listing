@@ -20,7 +20,7 @@ public class PostController {
     public void redirect (HttpServletResponse response) throws IOException {
         response.sendRedirect("/swagger-ui.html");
     }
-
+    @CrossOrigin         //for CORS resolve
     @GetMapping("/propertypost")
     public List<Post> getAllPropertyPosts(){
         return repo.findAll();

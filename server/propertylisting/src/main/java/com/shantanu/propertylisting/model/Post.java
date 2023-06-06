@@ -4,15 +4,41 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "PropertyPost")
 public class Post {
-   private String title;
-   private String description;
-   private String status;
-   private int price;
-   private String location;
-   private int area;
-   private int bedrooms;
-   private int bathrooms;
+    private int id;
+    private String title;
+    private String description;
+    private String status;
+    private int price;
+    private String location;
+    private int area;
+    private int bedrooms;
+    private int bathrooms;
+    private String image_url;
+    private String country;
 
+    public String getCountry(){
+        return country;
+    }
+
+    public void setCountry (String country){
+        this.country = country;
+    }
+
+    public String getImage_url() {
+        return image_url;
+    }
+
+    public void setImage_url(String image_url) {
+        this.image_url = image_url;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     public String getTitle() {
         return title;
     }
@@ -80,7 +106,8 @@ public class Post {
     @Override
     public String toString() {
         return "Post{" +
-                "title='" + title + '\'' +
+                "id=" + id +
+                ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", status='" + status + '\'' +
                 ", price=" + price +
@@ -88,6 +115,8 @@ public class Post {
                 ", area=" + area +
                 ", bedrooms=" + bedrooms +
                 ", bathrooms=" + bathrooms +
+                ", image_url='" + image_url + '\'' +
+                ", country='" + country + '\'' +
                 '}';
     }
 
