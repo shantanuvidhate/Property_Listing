@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { HouseListComponent } from './components/house-list/house-list.component';
 import { HouseComponent } from './components/house/house.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PropertyDetailsComponent } from './pages/property-details/property-details.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     DropPriceComponent,
     HouseListComponent,
     HouseComponent,
+    PropertyDetailsComponent,
   ],
   imports: [
     BrowserModule,
