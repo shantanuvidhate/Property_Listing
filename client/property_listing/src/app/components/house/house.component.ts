@@ -24,4 +24,8 @@ export class HouseComponent implements OnInit {
 
   }
 
+    getId (id:number) : void{
+      console.log(id)
+    }
+
 }

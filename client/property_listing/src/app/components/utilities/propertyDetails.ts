@@ -1,5 +1,5 @@
 export interface PropertyDetails {
-    _id: number;
+    id: number;
     title: string;
     price: number;
     location: string;
