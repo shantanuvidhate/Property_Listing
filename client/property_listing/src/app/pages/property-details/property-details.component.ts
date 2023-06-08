@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-property-details',
@@ -8,10 +9,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PropertyDetailsComponent implements OnInit {
 
-constructor (private _activatedRoutes : ActivatedRoute){}
-
+  constructor (
+    private _activatedRoutes : ActivatedRoute,
+    private _formBuilder : FormBuilder
+    ){}
+  
   id:any;
-  fullName : string = 'Tom Holland'
+  fullName : string = 'Tom Holland';
+  contactForm:any;
+
 
   ngOnInit(): void {
     this.id = this._activatedRoutes.snapshot.paramMap.get('id');
