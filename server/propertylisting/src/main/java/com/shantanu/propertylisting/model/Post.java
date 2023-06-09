@@ -15,6 +15,7 @@ public class Post {
     private int bathrooms;
     private String image_url;
     private String country;
+    private String owner_name;
 
     public String getCountry(){
         return country;
@@ -103,6 +104,14 @@ public class Post {
         this.bathrooms = bathrooms;
     }
 
+    public String getOwner_name() {
+        return owner_name;
+    }
+
+    public void setOwner_name(String owner_name) {
+        this.owner_name = owner_name;
+    }
+
     @Override
     public String toString() {
         return "Post{" +
@@ -117,6 +126,7 @@ public class Post {
                 ", bathrooms=" + bathrooms +
                 ", image_url='" + image_url + '\'' +
                 ", country='" + country + '\'' +
+                ", owner_name='" + owner_name + '\'' +
                 '}';
     }
 
