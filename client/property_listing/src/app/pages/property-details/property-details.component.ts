@@ -8,7 +8,6 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
   styleUrls: ['./property-details.component.css']
 })
 export class PropertyDetailsComponent implements OnInit {
-
   constructor (
     private _activatedRoutes : ActivatedRoute,
     private _formBuilder : FormBuilder
@@ -22,6 +21,13 @@ export class PropertyDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.id = this._activatedRoutes.snapshot.paramMap.get('id');
     console.log(this.id)
+
+    this.contactForm = new FormGroup ({
+      name: new FormControl('' , [Validators.required]),
+      email: new FormControl('' , [Validators.required , Validators.email]),
+      phone: new FormControl('' , [Validators.required, Validators.pattern('[0-9]{10}')]),
+      message: new FormControl('' , [Validators.required])
+    })
   }
 
   getNameIcon (): string {
@@ -31,5 +37,7 @@ export class PropertyDetailsComponent implements OnInit {
     return IconNames.join('');
   }
 
-
+  submitContactForm (data:any) :void {
+   console.log(data) 
+  }
 }
