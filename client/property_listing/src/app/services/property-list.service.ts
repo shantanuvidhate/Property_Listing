@@ -17,6 +17,6 @@ export class PropertyListService {
   }
 
   getPropertyDetailsById(id : number) : Observable<any> {
-    return this._httpClient.get(`propertyDetails/${id}`);
+    return this._httpClient.get(environment.PostProperty_API+ `propertyDetails/${id}` );
   }
 }
