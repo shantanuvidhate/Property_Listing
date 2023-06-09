@@ -17,7 +17,7 @@ export class PropertyDetailsComponent implements OnInit {
     ){}
   
   id:any;
-  contactForm:any;
+  // contactForm:any;
   propertyDetail: PropertyDetails = {
     id: 0,
     title: '',
@@ -43,12 +43,12 @@ export class PropertyDetailsComponent implements OnInit {
       console.log(response)
     });
     
-    this.contactForm = new FormGroup ({
-      name: new FormControl('' , [Validators.required]),
-      email: new FormControl('' , [Validators.required , Validators.email]),
-      phone: new FormControl('' , [Validators.required, Validators.pattern('[0-9]{10}')]),
-      message: new FormControl('' , [Validators.required])
-    })
+    // this.contactForm = new FormGroup ({
+    //   name: new FormControl('' , [Validators.required]),
+    //   email: new FormControl('' , [Validators.required , Validators.email]),
+    //   phone: new FormControl('' , [Validators.required, Validators.pattern('[0-9]{10}')]),
+    //   message: new FormControl('' , [Validators.required])
+    // })
   }
 
   getNameIcon (owner_name : string): string {
@@ -60,5 +60,28 @@ export class PropertyDetailsComponent implements OnInit {
 
   submitContactForm (data:any) :void {
    console.log(data) 
+  }
+
+  contactForm = new FormGroup ({
+    name : new FormControl('', [Validators.required]),
+    email : new FormControl('', [Validators.required , Validators.email]),
+    phone : new FormControl('' ,[Validators.required , Validators.pattern('[0-9]{10}')]),
+    message : new FormControl('' , [Validators.required])
+  })
+
+  get name () {
+    return this.contactForm.get('name');
+  }
+
+  get email () {
+    return this.contactForm.get('email');
+  }
+
+  get phone () {
+    return this.contactForm.get('phone');
+  }
+
+  get message () {
+    return this.contactForm.get('message')
   }
 }

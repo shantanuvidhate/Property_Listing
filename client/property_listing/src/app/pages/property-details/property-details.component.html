@@ -47,10 +47,10 @@
                     </div>
                 </div>
                 <form class="flex flex-col gap-y-4" [formGroup]="contactForm" (ngSubmit)="submitContactForm(contactForm)">
-                    <input class="border border-gray-300 focus:border-blue-900 outline-none rounded w-full px-4 h-14 text-sm" type="text" placeholder="Name*" formControlName="name" [class]="contactForm.get('name').invalid && contactForm.get('name').dirty ? 'border-red-500' : ''">
-                    <input class="border border-gray-300 focus:border-blue-900 outline-none rounded w-full px-4 h-14 text-sm" type="text" placeholder="Email*" formControlName="email">
-                    <input class="border border-gray-300 focus:border-blue-900 outline-none rounded w-full px-4 h-14 text-sm" type="tel" placeholder="Phone*" formControlName="phone">
-                    <textarea class="border border-gray-300 outline-none resize-none rounded w-full p-4 h-36 text-sm text-gray-400" placeholder="Message*" formControlName="message"></textarea>
+                    <input class="border border-gray-300 focus:border-blue-900 outline-none rounded w-full px-4 h-14 text-sm" type="text" placeholder="Name*" formControlName="name" [class]="name && name.touched && name.invalid && name.dirty ? 'border-red-500' : ''">
+                    <input class="border border-gray-300 focus:border-blue-900 outline-none rounded w-full px-4 h-14 text-sm" type="text" placeholder="Email*" formControlName="email" [class]="email && email.invalid && email.dirty ? 'border-red-500' : ''">
+                    <input class="border border-gray-300 focus:border-blue-900 outline-none rounded w-full px-4 h-14 text-sm" type="number" placeholder="Phone*" formControlName="phone" [class]="phone && phone.invalid && phone.dirty ? 'border-red-500' : ''">
+                    <textarea class="border border-gray-300 outline-none resize-none rounded w-full p-4 h-36 text-sm text-gray-400" placeholder="Message*" formControlName="message" [class]="message && message.invalid && message.dirty ? 'border-red-500' : ''"></textarea>
                     <div class="flex gap-x-2">
                         <button class="bg-blue-700 hover:bg-blue-800 text-white p-4 text-sm w-1/2 transition rounded" [ngClass]="contactForm.invalid ? 'bg-gray-400 hover:bg-gray-400' : ''" [disabled]="contactForm.invalid">Send Message</button>
                         <!-- <button class="border border-blue-700 text-blue-700 hover:border-blue-800 hover:text-blue-800 rounded p-4 text-sm w-full transition">Call</button> -->
