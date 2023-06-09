@@ -17,6 +17,7 @@ import { HouseListComponent } from './components/house-list/house-list.component
 import { HouseComponent } from './components/house/house.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PropertyDetailsComponent } from './pages/property-details/property-details.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { PropertyDetailsComponent } from './pages/property-details/property-deta
     MatMenuModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
