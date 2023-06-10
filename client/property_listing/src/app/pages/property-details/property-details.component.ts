@@ -19,7 +19,7 @@ export class PropertyDetailsComponent implements OnInit {
   id:any;
   // contactForm:any;
   propertyDetail: PropertyDetails = {
-    id: 0,
+    id: 1,
     title: '',
     price: 0,
     location: '',
