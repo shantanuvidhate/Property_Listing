@@ -18,6 +18,7 @@ import { HouseComponent } from './components/house/house.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PropertyDetailsComponent } from './pages/property-details/property-details.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { FilterPipe } from './components/utilities/pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     HouseListComponent,
     HouseComponent,
     PropertyDetailsComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
