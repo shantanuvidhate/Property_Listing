@@ -5,8 +5,14 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(properties: any[], minPrice: number, maxPrice: number): any[] {
+    if (!minPrice && !maxPrice) {
+      return properties;
+    }
+
+    return properties.filter(property => {
+      return (!minPrice || property.price >= minPrice) && (!maxPrice || property.price <= maxPrice);
+    });
   }
 
 }
