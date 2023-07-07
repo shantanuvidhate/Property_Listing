@@ -1,9 +1,11 @@
 package com.shantanu.propertylisting.model;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "PropertyPost")
 public class Post {
+    @Id
     private int id;
     private String title;
     private String description;
@@ -15,6 +17,7 @@ public class Post {
     private int bathrooms;
     private String image_url;
     private String country;
+    private String owner_name;
 
     public String getCountry(){
         return country;
@@ -103,6 +106,14 @@ public class Post {
         this.bathrooms = bathrooms;
     }
 
+    public String getOwner_name() {
+        return owner_name;
+    }
+
+    public void setOwner_name(String owner_name) {
+        this.owner_name = owner_name;
+    }
+
     @Override
     public String toString() {
         return "Post{" +
@@ -117,10 +128,25 @@ public class Post {
                 ", bathrooms=" + bathrooms +
                 ", image_url='" + image_url + '\'' +
                 ", country='" + country + '\'' +
+                ", owner_name='" + owner_name + '\'' +
                 '}';
     }
 
     public Post() {
     }
 
+    public Post(int id, String title, String description, String status, int price, String location, int area, int bedrooms, int bathrooms, String image_url, String country, String owner_name) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.status = status;
+        this.price = price;
+        this.location = location;
+        this.area = area;
+        this.bedrooms = bedrooms;
+        this.bathrooms = bathrooms;
+        this.image_url = image_url;
+        this.country = country;
+        this.owner_name = owner_name;
+    }
 }

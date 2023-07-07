@@ -10,5 +10,6 @@ export interface PropertyDetails {
     status: string;
     description: string;
     image_url: string;
+    owner_name :string;
   }
   
