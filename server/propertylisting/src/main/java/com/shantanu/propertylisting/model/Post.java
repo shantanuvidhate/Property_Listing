@@ -1,18 +1,47 @@
 package com.shantanu.propertylisting.model;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "PropertyPost")
 public class Post {
-   private String title;
-   private String description;
-   private String status;
-   private int price;
-   private String location;
-   private int area;
-   private int bedrooms;
-   private int bathrooms;
+    @Id
+    private int id;
+    private String title;
+    private String description;
+    private String status;
+    private int price;
+    private String location;
+    private int area;
+    private int bedrooms;
+    private int bathrooms;
+    private String image_url;
+    private String country;
+    private String owner_name;
 
+    public String getCountry(){
+        return country;
+    }
+
+    public void setCountry (String country){
+        this.country = country;
+    }
+
+    public String getImage_url() {
+        return image_url;
+    }
+
+    public void setImage_url(String image_url) {
+        this.image_url = image_url;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     public String getTitle() {
         return title;
     }
@@ -77,10 +106,19 @@ public class Post {
         this.bathrooms = bathrooms;
     }
 
+    public String getOwner_name() {
+        return owner_name;
+    }
+
+    public void setOwner_name(String owner_name) {
+        this.owner_name = owner_name;
+    }
+
     @Override
     public String toString() {
         return "Post{" +
-                "title='" + title + '\'' +
+                "id=" + id +
+                ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", status='" + status + '\'' +
                 ", price=" + price +
@@ -88,10 +126,27 @@ public class Post {
                 ", area=" + area +
                 ", bedrooms=" + bedrooms +
                 ", bathrooms=" + bathrooms +
+                ", image_url='" + image_url + '\'' +
+                ", country='" + country + '\'' +
+                ", owner_name='" + owner_name + '\'' +
                 '}';
     }
 
     public Post() {
     }
 
+    public Post(int id, String title, String description, String status, int price, String location, int area, int bedrooms, int bathrooms, String image_url, String country, String owner_name) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.status = status;
+        this.price = price;
+        this.location = location;
+        this.area = area;
+        this.bedrooms = bedrooms;
+        this.bathrooms = bathrooms;
+        this.image_url = image_url;
+        this.country = country;
+        this.owner_name = owner_name;
+    }
 }

@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 public class PostController {
-
+    
     @Autowired
     PostRepository repo;
     @ApiIgnore
@@ -20,10 +20,17 @@ public class PostController {
     public void redirect (HttpServletResponse response) throws IOException {
         response.sendRedirect("/swagger-ui.html");
     }
-
+    
+    @CrossOrigin         //for CORS resolve
     @GetMapping("/propertypost")
     public List<Post> getAllPropertyPosts(){
         return repo.findAll();
+    }
+
+    @CrossOrigin
+    @GetMapping("propertyDetails/{id}")
+    public Post getPostById(@PathVariable int id) {
+        return repo.findById(id).orElse(null);
     }
 
     @PostMapping("/addproperty")
