@@ -13,10 +13,10 @@ export class PropertyListService {
   ) { }
 
   getPropertyList () {
-    return this._httpClient.get(environment.PostProperty_API + 'property-list')
+    return this._httpClient.get(environment.PostProperty_API + '/api/v1')
   }
 
   getPropertyDetailsById(id : number) : Observable<any> {
-    return this._httpClient.get(environment.PostProperty_API+ `property-list/${id}` );
+    return this._httpClient.get(environment.PostProperty_API+ `propertyDetail/${id}` );
   }
 }
