@@ -17,6 +17,7 @@ public class Property {
     private int bedrooms;
     private int bathrooms;
     private String image_url;
+    private String lg_img;
     private String country;
     private String owner_name;
 
@@ -115,21 +116,31 @@ public class Property {
     public void setOwner_name(String owner_name) {
         this.owner_name = owner_name;
     }
+    
+
+    public String getLg_img() {
+        return lg_img;
+    }
+
+    public void setLg_img(String lg_img) {
+        this.lg_img = lg_img;
+    }
 
     public Property() {
     }
 
     public Property(String _id, String title,
-                    String description,
-                    String status,
-                    int price,
-                    String location,
-                    int area,
-                    int bedrooms,
-                    int bathrooms,
-                    String image_url,
-                    String country,
-                    String owner_name) {
+            String description,
+            String status,
+            int price,
+            String location,
+            int area,
+            int bedrooms,
+            int bathrooms,
+            String image_url,
+            String country,
+            String owner_name,
+            String lg_img) {
         this._id = _id;
         this.title = title;
         this.description = description;
@@ -142,6 +153,7 @@ public class Property {
         this.image_url = image_url;
         this.country = country;
         this.owner_name = owner_name;
+        this.lg_img = lg_img;
     }
 
     @Override
@@ -159,6 +171,7 @@ public class Property {
                 ", image_url='" + image_url + '\'' +
                 ", country='" + country + '\'' +
                 ", owner_name='" + owner_name + '\'' +
+                ", lg_img='" + lg_img + '\'' +
                 '}';
     }
 }
