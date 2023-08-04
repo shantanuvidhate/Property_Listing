@@ -1,6 +1,5 @@
 package com.server.server.model;
 
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -8,8 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Property {
 
     @Id
-    private ObjectId _id;
-    private Integer id;
+    private String _id;
     private String title;
     private String description;
     private String status;
@@ -22,12 +20,12 @@ public class Property {
     private String country;
     private String owner_name;
 
-    public int getId() {
-        return id;
+    public String getId() {
+        return _id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(String _id) {
+        this._id = _id;
     }
 
     public String getTitle() {
@@ -121,7 +119,7 @@ public class Property {
     public Property() {
     }
 
-    public Property(int id, String title,
+    public Property(String _id, String title,
                     String description,
                     String status,
                     int price,
@@ -132,7 +130,7 @@ public class Property {
                     String image_url,
                     String country,
                     String owner_name) {
-        this.id = id;
+        this._id = _id;
         this.title = title;
         this.description = description;
         this.status = status;
@@ -149,7 +147,7 @@ public class Property {
     @Override
     public String toString() {
         return "Property{" +
-                "id=" + id +
+                "id=" + _id +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", status='" + status + '\'' +

@@ -1,15 +1,14 @@
 package com.server.server.controller;
 
-import com.server.server.DTO.PropertyForm;
 import com.server.server.model.Property;
 import com.server.server.repositories.PropertyPostRepository;
-import com.server.server.services.AddPropertyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("/api/v1")
 public class PropertyPostController {
 
 //    private final AddPropertyService addPropertyService;
@@ -32,8 +31,8 @@ public class PropertyPostController {
     }
 
     @CrossOrigin
-    @GetMapping("propertyDetails/{id}")
-    public Property getPropertyById (@PathVariable Integer id) {
+    @GetMapping("propertydetails/{id}")
+    public Property getPropertyById (@PathVariable String id) {
         return propertyPostRepository.findById(id).orElse(null);
     }
 
